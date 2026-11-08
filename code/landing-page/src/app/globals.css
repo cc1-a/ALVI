@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-page: #FFFFFF;
+  --surface: #F3F3F6;
+  --text-primary: #454545;
+  --text-muted: #6E6E73;
+  --text-numeral: #BEBEBE;
+  --divider: #DEDEDE;
+  --slate-accent: #5B6B7E;
+
+  /* Architectural & Lanyard Rail Design Tokens */
+  --color-background: #F3F3F6;
+  --color-foreground: #454545;
+  --color-card: #FFFFFF;
+  --color-card-foreground: #1D1D1F;
+  --color-muted: #EBEBEF;
+  --color-muted-foreground: #6E6E73;
+  --color-border: #DEDEDE;
+  --color-ring: #5B6B7E;
+  --color-chart-1: #5B6B7E;
+  --color-chart-2: #454545;
+  --color-chart-3: #8B9BAB;
+  --color-chart-4: #6A7B76;
+  --color-chart-5: #1D1D1F;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  background-color: #FFFFFF;
+  color: #454545;
+  font-family: "Oakes Grotesk", Inter, -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: #FFFFFF;
+  color: #454545;
+}
+
+/* Custom scrollbar to match airform minimalist aesthetic */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #DEDEDE;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #BEBEBE;
+}
+
+/* Lanyard rail utility bridge */
+.bg-card { background-color: var(--color-card); }
+.text-card-foreground { color: var(--color-card-foreground); }
+.border-border { border-color: var(--color-border); }
+.bg-muted { background-color: var(--color-muted); }
+.text-muted-foreground { color: var(--color-muted-foreground); }
+.bg-background { background-color: var(--color-background); }
+.text-foreground { color: var(--color-foreground); }
+.text-chart-1 { color: var(--color-chart-1); }
+.text-chart-2 { color: var(--color-chart-2); }
+.text-chart-3 { color: var(--color-chart-3); }
+.text-chart-4 { color: var(--color-chart-4); }
+.text-chart-5 { color: var(--color-chart-5); }
+.focus-visible\:outline-ring:focus-visible { outline-color: var(--color-ring); }
+.focus-visible\:ring-ring:focus-visible { --tw-ring-color: var(--color-ring); }
+
+/* Custom utility styles */
+.frosted-pill {
+  background: rgba(232, 232, 237, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(222, 222, 222, 0.65);
+}
+
+.frosted-card {
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(222, 222, 222, 0.75);
+}
+
+.hero-wordmark-gradient {
+  background: linear-gradient(180deg, #5B6B7E 0%, #B8C0C8 52%, #FFFFFF 95%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+@keyframes fadeInSide {
+  0% {
+    opacity: 0;
+    transform: translateX(-28px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-side {
+  animation: fadeInSide 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
